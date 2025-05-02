@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio Control Extension</title>
+
+    <style>
+      @font-face {
+        font-family: 'Roboto';
+        src: url('./fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Roboto', sans-serif;
+        padding: 10px;
+        width: 300px;
+        background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+      }
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      input[type='range'] {
+        width: 100%;
+      }
+      .volume-control {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .volume-value {
+        font-size: 14px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h4 class="title">Tab Volume</h4>
+    <div class="volume-control">
+      <img id="SoundIcon" src="img/volume_up.png" alt="Sound Icon" style="width: 20px; height: 20px; cursor: pointer" />
+      <img id="MuteIcon" src="img/volume_off.png" alt="Mute Icon" style="width: 20px; height: 20px; cursor: pointer; display: none" />
+      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" />
+      <span class="volume-value" id="volumeValue">100%</span>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
